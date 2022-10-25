@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "custom";
+  src: url("./fonts/RiseStarHandRegular.otf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+/* Body styling */
+body {
+  background-color: #dbcdb5;
+  display: grid;
+  grid-template:
+    "header header"
+    "navigation main-content"
+    "footer footer";
+  justify-content: center;
+}
+/* Header styling */
+.header {
+  grid-area: header;
+  text-align: center;
+  background-color: #e9b08e;
+  min-width: 100vw;
+}
+.header h1 {
+  font-family: "custom";
+  font-size: 5rem;
+  color: #a4330d;
+}
+/* Navigation styling */
+.navigation {
+  grid-area: navigation;
+  background-color: black;
+  max-width: 20vw;
+  height: auto;
+}
+/* Main page content styling */
+.main-content {
+  grid-area: main-content;
+  background-color: #ed6e3a;
+  height: auto;
+}
+/* Footer styling */
+.footer {
+  grid-area: footer;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  bottom: 0;
+  min-width: 100vw;
+  min-height: 8vh;
+}
+.footer img {
+  transition: transform 200ms ease-out;
+}
+.footer img:hover {
+  transform: scale(1.4);
+}
+
+ul li a {
+  color: #a4330d;
+}
+
+ul button {
+  color: white;
+  background-color: #6c9e4f;
+}
