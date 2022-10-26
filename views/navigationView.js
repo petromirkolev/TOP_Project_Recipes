@@ -6,11 +6,9 @@ export default function addMenuItems() {
   recipes.map((recipe) => {
     navMenu.insertAdjacentHTML(
       "afterbegin",
-      `<li><a class="${recipe.name.split(" ").join("")}"> ${
+      `<li><a class="recipe ${recipe.name.toLowerCase()}">${
         recipe.name
       }</a></li>`
     );
   });
-  console.log("Hey");
-  console.log("Hey");
 }
