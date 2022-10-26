@@ -9,8 +9,10 @@ const navigation = query(".navigation-menu");
 export const recipeContainer = document.querySelector(".recipe-container");
 
 // On page load
-viewController(recipeContainer, "initial");
-addMenuItems();
+const onPageLoad = () => {
+  viewController(recipeContainer, "initial");
+  addMenuItems();
+};
 
 // Add new Recipe
 addNewBtn.addEventListener("click", (e) => {
@@ -31,3 +33,8 @@ navigation.addEventListener("click", (e) => {
   const classList = e.target.classList[1];
   viewController(recipeContainer, "recipeView", classList);
 });
+
+// Go to home page
+query(".header-logo").addEventListener("click", onPageLoad);
+
+onPageLoad();

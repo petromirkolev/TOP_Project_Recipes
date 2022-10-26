@@ -5,7 +5,7 @@ export default function addMenuItems() {
   navMenu.innerHTML = "";
   recipes.map((recipe) => {
     navMenu.insertAdjacentHTML(
-      "afterbegin",
+      "beforeend",
       `<li><a class="recipe ${recipe.name.toLowerCase()}">${
         recipe.name
       }</a></li>`

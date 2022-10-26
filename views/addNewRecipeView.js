@@ -36,6 +36,7 @@ export default function addNewRecipeView(recipeContainer) {
   `;
   // Set view
   recipeContainer.innerHTML = view;
+  document.querySelector(".add-recipe").classList.add("fade-in");
   // Get recipe data
   document.querySelector("#submit").addEventListener("click", (e) => {
     e.preventDefault();
