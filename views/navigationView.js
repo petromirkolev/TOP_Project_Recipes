@@ -11,4 +11,5 @@ export default function addMenuItems() {
       }</a></li>`
     );
   });
+  console.log("Hey");
 }
