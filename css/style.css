@@ -96,7 +96,7 @@ ul li a:hover {
   font-size: 1.5rem;
   color: #ffffff;
 }
-ul button {
+.navigation-container button {
   color: white;
   background-color: #6c9e4f;
   border: none;
@@ -107,10 +107,10 @@ ul button {
   min-height: 50px;
   transition: transform 200ms ease-in-out;
 }
-ul button:hover {
+.navigation-container button:hover {
   cursor: pointer;
 }
-ul button:active {
+.navigation-container button:active {
   transform: scale(1.1);
 }
 /* Smartphone styling */

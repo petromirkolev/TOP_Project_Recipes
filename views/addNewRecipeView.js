@@ -1,5 +1,6 @@
 import RecipeConstructor from "../src/modules/recipeConstructor.js";
 import recipes from "../src/modules/recipeStorage.js";
+import addMenuItems from "./navigationView.js";
 const query = document.querySelector.bind(document);
 
 export default function addNewRecipeView(recipeContainer) {
@@ -10,8 +11,8 @@ export default function addNewRecipeView(recipeContainer) {
   <label for="image">Photo link</label>
   <input type="url" name="image" id="image" placeholder="https://example.com"/>
   <label for="ingridients">Ingridients</label>
-  <p>(separate with white space in between)</p>
-  <input type="text" name="ing" id="ing" placeholder="basil lemon water" minlength="10" />
+  <p>(separate with comma and white space in between)</p>
+  <input type="text" name="ing" id="ing" placeholder="basil, one lemon, water" minlength="10" />
   <label for="steps-to-prepare">Steps to prepare</label>
   <textarea
     id="steps-to-prepare"
@@ -37,6 +38,7 @@ export default function addNewRecipeView(recipeContainer) {
   recipeContainer.innerHTML = view;
   // Get recipe data
   document.querySelector("#submit").addEventListener("click", (e) => {
+    e.preventDefault();
     const urlCheck =
       /((?:(?:http?|ftp)[s]*:\/\/)?[a-z0-9-%\/\&=?\.]+\.[a-z]{2,4}\/?([^\s<>\#%"\,\{\}\\|\\\^\[\]`]+)?)/gi;
 
@@ -52,20 +54,24 @@ export default function addNewRecipeView(recipeContainer) {
     urlCheck.test(query("#image").value)
       ? (image = query("#image").value)
       : (image = "");
-    let ing = query("#ing").value.split(" ");
+    let ing = query("#ing").value.split(", ");
     let steps = query("#steps-to-prepare").value;
     let note = query("#cooks-note").value;
 
     // Create new recipe object
     const newRecipe = new RecipeConstructor(name, image, ing, steps, note);
     // Push object to recipes array
+    localStorage.setItem("recipe", JSON.stringify(newRecipe));
     recipes.push(newRecipe);
+    localStorage.setItem("recipes", JSON.stringify(recipes));
     // Empty input
+    query("#name").blur();
     query("#name").value =
       query("#image").value =
       query("#ing").value =
       query("#steps-to-prepare").value =
       query("#cooks-note").value =
         "";
+    addMenuItems();
   });
 }

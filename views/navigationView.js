@@ -1,14 +1,14 @@
+import recipes from "../src/modules/recipeStorage.js";
 const navMenu = document.querySelector(".navigation-menu");
 
-const navItems = [
-  `<li><a href="#"> Pizza Burgers </a></li>`,
-  `<li><a href="#"> Barbecue Turkey Meatballs </a></li>`,
-];
-
 export default function addMenuItems() {
-  const navStr = navItems.map((item) => item);
-  return navMenu.insertAdjacentHTML(
-    "afterbegin",
-    navStr.toString().split(",").join("")
-  );
+  navMenu.innerHTML = "";
+  recipes.map((recipe) => {
+    navMenu.insertAdjacentHTML(
+      "afterbegin",
+      `<li><a class="${recipe.name.split(" ").join("")}"> ${
+        recipe.name
+      }</a></li>`
+    );
+  });
 }
