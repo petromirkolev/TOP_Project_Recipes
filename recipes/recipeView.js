@@ -1,5 +1,5 @@
-<h1>Pizza Burgers</h1>
-
+export default function recipeView() {
+  let view = `<h1>Pizza Burgers</h1>
 <img
   src="https://www.tasteofhome.com/wp-content/uploads/2018/01/Open-Faced-Pizza-Burgers_EXPS_FT20_13459_F_0306_1-14.jpg?fit=700,1024"
   width="400"
@@ -48,3 +48,7 @@
 
 <h3>Cook's note</h3>
 <p>Use umami paste in place of tomato paste if possible.</p>
+`;
+
+  return view;
+}
