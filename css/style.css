@@ -16,6 +16,14 @@
 body {
   background-color: #dbcdb5;
 }
+/* Initial view */
+.initial-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin-top: 50px;
+}
 /* Header styling */
 .header {
   position: sticky;
@@ -57,10 +65,6 @@ body {
   padding: 20px 50px 50px 50px;
   width: 100vw;
   height: 100vh;
-}
-object {
-  width: 100%;
-  height: 100%;
 }
 /* Footer styling */
 .footer {
@@ -118,9 +122,5 @@ ul button:active {
   .recipe-container {
     width: 100vw;
     height: 100vh;
-  }
-  iframe {
-    width: 100%;
-    height: 100%;
   }
 }

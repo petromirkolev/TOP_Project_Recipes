@@ -1,13 +1,9 @@
-export default function recipeConstructor() {
-  class Recipe {
-    constructor(name, ing, steps, note) {
-      this.name = name;
-      this.ing = [];
-      this.note = note;
-      this.steps = [];
-    }
-    stepsToPrepare() {
-      console.log("Steps to prepare");
-    }
+export default class Recipe {
+  constructor(name, image, ing, steps, note) {
+    this.name = name;
+    this.image = image;
+    this.ing = ing;
+    this.steps = steps;
+    this.note = note;
   }
 }

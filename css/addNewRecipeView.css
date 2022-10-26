@@ -1,4 +1,40 @@
 .add-recipe {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.add-recipe label,
+.add-recipe input {
+  font-size: 1.5rem;
+}
+.add-recipe input {
+  width: 20vw;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+.add-recipe input:focus {
+  background-color: rgba(143, 188, 143, 0.5);
+}
+#steps-to-prepare {
+  border-radius: 20px;
+  padding: 10px 0 0 10px;
+}
+#submit {
+  color: white;
+  background-color: #6c9e4f;
+  border: none;
+  margin-top: 20px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  min-width: 200px;
+  min-height: 50px;
+  transition: transform 200ms ease-in-out;
+}
+#submit:hover {
+  cursor: pointer;
+}
+#submit:active {
+  transform: scale(1.1);
 }
