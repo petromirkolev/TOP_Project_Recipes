@@ -1,27 +1,15 @@
 "use strict";
-import recipeView from "../views/recipeView.js";
 import addNewRecipe from "./modules/addNewRecipe.js";
+import pageLoadView from "./modules/pageLoadView.js";
+import addNewRecipeView from "../views/addNewRecipeView.js";
+import addMenuItems from "../views/navigationView.js";
 const query = document.querySelector.bind(document);
-const recipeContainer = query(".recipe-container");
 const addNewBtn = query(".add-new");
+const recipeContainer = document.querySelector(".recipe-container");
 
-// TO DO
+// On page load
+pageLoadView(recipeContainer);
+addMenuItems();
 
-addNewBtn.addEventListener("click", (e) => {
-  addNewRecipe();
-});
-
-const recipe = recipeView();
-recipeContainer.innerHTML = recipe;
-
-class Recipe {
-  constructor(name, ing, steps, note) {
-    this.name = name;
-    this.ing = [];
-    this.note = note;
-    this.steps = [];
-  }
-  stepsToPrepare() {
-    console.log("Steps to prepare");
-  }
-}
+// Add new Recipe
+addNewBtn.addEventListener("click", addNewRecipeView);
