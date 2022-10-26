@@ -12,4 +12,5 @@ export default function addMenuItems() {
     );
   });
   console.log("Hey");
+  console.log("Hey");
 }
