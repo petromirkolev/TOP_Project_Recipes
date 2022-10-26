@@ -1,7 +1,7 @@
 "use strict";
 import viewController from "./modules/viewController.js";
 import addMenuItems from "../views/navigationView.js";
-import navMenu from "../views/navigationView.js";
+import recipes from "./modules/recipeStorage.js";
 const query = document.querySelector.bind(document);
 const addNewBtn = query(".add-new");
 const deleteRecipes = query(".clear-recipes");
@@ -21,6 +21,8 @@ addNewBtn.addEventListener("click", (e) => {
 
 // Delete all recipes
 deleteRecipes.addEventListener("click", (e) => {
+  const navMenu = document.querySelector(".navigation-menu");
+  recipes.length = 0;
   localStorage.clear();
   navMenu.innerHTML = "";
   viewController(recipeContainer, "initial");
@@ -30,11 +32,12 @@ deleteRecipes.addEventListener("click", (e) => {
 navigation.addEventListener("click", (e) => {
   if (!e.target.classList.contains("recipe")) return;
   // Pass classList to controller so we can find the recipe in recipes array
-  const classList = e.target.classList[1];
+  const classList = e.target.classList[0];
   viewController(recipeContainer, "recipeView", classList);
 });
 
 // Go to home page
 query(".header-logo").addEventListener("click", onPageLoad);
 
+// Initial page load
 onPageLoad();

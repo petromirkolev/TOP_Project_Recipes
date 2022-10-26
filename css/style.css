@@ -50,12 +50,12 @@ body {
   font-family: "custom1";
   background-color: #ed6e3a;
   display: flex;
-  height: 100vh;
+  height: auto;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  min-width: 15vw;
-  padding: 20px 0 0 0;
+  width: 20vw;
+  padding: 20px 0 0 10px;
 }
 .recipe-container {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -103,7 +103,6 @@ ul li {
 ul li a {
   font-size: 1.5rem;
   color: #a4330d;
-  text-decoration: none;
   transition: color 200ms ease-in-out;
 }
 ul li a:hover {

@@ -14,9 +14,6 @@
     opacity: 1;
   }
 }
-/* .fade-in {
-  opacity: 1;
-} */
 .add-recipe label,
 .add-recipe input {
   font-size: 1.5rem;

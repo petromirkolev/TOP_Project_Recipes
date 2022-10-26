@@ -10,7 +10,6 @@ export default function recipeView(recipeContainer, classList) {
         src="${recipe.image}"
         alt="${recipe.name}"
       />
-      
       <h3>Ingridients</h3>
       <ul class>
       ${recipe.ing
@@ -28,5 +27,6 @@ export default function recipeView(recipeContainer, classList) {
       `;
     }
   });
+
   recipeContainer.innerHTML = view;
 }
