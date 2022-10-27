@@ -4,8 +4,10 @@ import addMenuItems from "../views/navigationView.js";
 import recipes from "./modules/recipeStorage.js";
 const query = document.querySelector.bind(document);
 const addNewBtn = query(".add-new");
+const menuBtn = query(".expand");
 const deleteRecipes = query(".clear-recipes");
 const navigation = query(".navigation-menu");
+const naviContainer = query(".navigation-container");
 export const recipeContainer = document.querySelector(".recipe-container");
 
 // On page load
@@ -38,6 +40,12 @@ navigation.addEventListener("click", (e) => {
 
 // Go to home page
 query(".header-logo").addEventListener("click", onPageLoad);
+
+// Show mobile menu
+menuBtn.addEventListener("click", (e) => {
+  menuBtn.style.display = "none";
+  naviContainer.style.display = "inline-block";
+});
 
 // Initial page load
 onPageLoad();

@@ -14,14 +14,7 @@ export default function addNewRecipeView(recipeContainer) {
   <p>(separate with comma and white space in between)</p>
   <input type="text" name="ing" id="ing" placeholder="basil, one lemon, water" minlength="10" />
   <label for="steps-to-prepare">Steps to prepare</label>
-  <textarea
-    id="steps-to-prepare"
-    name="steps-to-prepare"
-    minlength="10"
-    rows="10"
-    cols="50"
-    placeholder="Boil water for 10 minutes. Add basil and lemon..."
-  ></textarea>
+  <input type="text" name="steps-to-prepare" id="steps-to-prepare"placeholder="Boil water for 10 minutes. Add basil and lemon..." minlength="10"></input>
   <label for="cooks-note">Cook's note</label>
   <input
     type="text"

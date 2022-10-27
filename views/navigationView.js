@@ -9,7 +9,7 @@ export default function addMenuItems() {
       const listItem = document.createElement("li");
       const linkItem = document.createElement("a");
       listItem.appendChild(linkItem);
-      linkItem.classList.add(recipe.name.toLowerCase());
+      linkItem.classList.add(recipe.name.split(" ").join("").toLowerCase());
       linkItem.classList.add("recipe");
 
       linkItem.textContent = recipe.name;

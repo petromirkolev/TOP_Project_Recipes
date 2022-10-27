@@ -7,10 +7,19 @@
   src: url("../src/fonts/GlacialIndifference-Regular.ttf");
 }
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+/* Fade in pages animation */
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 /* Body styling */
 body {
@@ -30,16 +39,19 @@ body {
 /* Header styling */
 .header {
   position: sticky;
+  text-align: center;
   top: 0;
   z-index: 1;
-  text-align: center;
-  background-color: rgba(233, 175, 142, 0.7);
   min-width: 100vw;
+  background-color: rgba(233, 175, 142, 0.7);
 }
 .header h1 {
   font-family: "custom";
   font-size: 5rem;
   color: #a4330d;
+}
+.expand {
+  display: none;
 }
 /* Main page content styling */
 .main-content {
@@ -47,58 +59,41 @@ body {
 }
 /* Navigation styling */
 .navigation-container {
-  font-family: "custom1";
-  background-color: #ed6e3a;
   display: flex;
-  height: auto;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 20vw;
-  padding: 20px 0 0 10px;
-}
-.recipe-container {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  display: flex;
-  overflow: scroll;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 20px 50px 50px 50px;
-  width: 100vw;
-  height: 100vh;
-}
-/* Footer styling */
-.footer {
-  position: sticky;
+  position: fixed;
+  top: 0;
   bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.2);
-  min-width: 100vw;
-  padding: 10px 0 10px 0;
+  height: auto;
+  width: 20vw;
+  padding: 110px 0 0 10px;
+  font-family: "custom1";
+  background-color: #ed6e3a;
 }
-.footer img {
-  transition: transform 200ms ease-out;
+.navigation-container button {
+  border: none;
+  margin-top: 20px;
+  border-radius: 10px;
+  min-width: 200px;
+  min-height: 50px;
+  font-size: 1.5rem;
+  color: white;
+  background-color: #6c9e4f;
+  transition: transform 200ms ease-in-out;
 }
-.footer img:hover {
-  transform: scale(1.4);
+.navigation-container button:hover {
+  cursor: pointer;
+}
+.navigation-container button:active {
+  transform: scale(1.1);
 }
 ul {
   list-style: none;
 }
 ul li {
   animation: fadein 100ms ease-in;
-}
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 ul li a {
   font-size: 1.5rem;
@@ -109,29 +104,35 @@ ul li a:hover {
   font-size: 1.5rem;
   color: #ffffff;
 }
-.navigation-container button {
-  color: white;
-  background-color: #6c9e4f;
-  border: none;
-  margin-top: 20px;
-  border-radius: 10px;
-  font-size: 1.5rem;
-  min-width: 200px;
-  min-height: 50px;
-  transition: transform 200ms ease-in-out;
+/* Recipe body styling */
+.recipe-container {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+  gap: 20px;
+  padding: 20px 50px 50px 50px;
+  width: 100vw;
+  height: 100vh;
 }
-.navigation-container button:hover {
-  cursor: pointer;
+/* Footer styling */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  min-width: 100vw;
+  padding: 10px 0 10px 0;
+  background-color: rgba(0, 0, 0, 0.2);
 }
-.navigation-container button:active {
-  transform: scale(1.1);
+.footer img {
+  transition: transform 200ms ease-out;
 }
-.mobile-navigation-container {
-  display: none;
-}
-/* Fade in pages animation */
-.fade-in {
-  opacity: 1;
+.footer img:hover {
+  transform: scale(1.4);
 }
 /* Smartphone styling */
 @media screen and (max-width: 500px) {
@@ -148,34 +149,5 @@ ul li a:hover {
   .main-content {
     display: block;
     max-width: 100vw;
-  }
-  .navigation-container {
-    display: none;
-  }
-  .mobile-navigation-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    width: 100vw;
-    height: 100px;
-  }
-  .mobile-navigation-container button {
-    color: white;
-    background-color: #6c9e4f;
-    border: none;
-    margin-top: 10px;
-    border-radius: 10px;
-    font-size: 1.5rem;
-    width: 150px;
-    height: 65px;
-  }
-  .mobile-navigation-container button:active {
-    transfor: scale(1.1);
-  }
-
-  .recipe-container {
-    display: flex;
-  }
-  .footer {
   }
 }

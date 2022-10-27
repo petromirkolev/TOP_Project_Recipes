@@ -1,0 +1,19 @@
+{
+  "name": "odin-recipes",
+  "version": "1.0.0",
+  "description": "Odin Recipes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petromirkolev/odin-recipes.git"
+  },
+  "author": "Petromir Kolev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petromirkolev/odin-recipes/issues"
+  },
+  "homepage": "https://github.com/petromirkolev/odin-recipes#readme"
+}

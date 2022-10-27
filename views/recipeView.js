@@ -4,7 +4,7 @@ export default function recipeView(recipeContainer, classList) {
   let view;
 
   recipes.map((recipe) => {
-    if (recipe.name.toLowerCase() === classList) {
+    if (recipe.name.split(" ").join("").toLowerCase() === classList) {
       view = `<h1>${recipe.name}</h1>
       <img
         src="${recipe.image}"
