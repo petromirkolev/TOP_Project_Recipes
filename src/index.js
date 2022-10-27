@@ -54,15 +54,16 @@ menuBtn.addEventListener("click", (e) => {
 // Initial page load
 onPageLoad();
 
+// Show mobile menu
 const showMobileMenu = () => {
   menuBtn.style.display = "none";
   naviContainer.style.display = "inline-block";
 };
-
+// Close mobile menu event listener
 closeMenu.addEventListener("click", (e) => {
   closeMobileMenu();
 });
-
+// Close mobile menu
 const closeMobileMenu = () => {
   naviContainer.style.display = "none";
   menuBtn.style.display = "inline-block";
