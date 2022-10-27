@@ -8,6 +8,7 @@ const menuBtn = query(".expand");
 const deleteRecipes = query(".clear-recipes");
 const navigation = query(".navigation-menu");
 const naviContainer = query(".navigation-container");
+const closeMenu = query(".close-menu");
 export const recipeContainer = document.querySelector(".recipe-container");
 
 // On page load
@@ -19,6 +20,8 @@ const onPageLoad = () => {
 // Add new Recipe
 addNewBtn.addEventListener("click", (e) => {
   viewController(recipeContainer, "addNew");
+  naviContainer.style.display = "none";
+  menuBtn.style.display = "inline-block";
 });
 
 // Delete all recipes
@@ -36,6 +39,8 @@ navigation.addEventListener("click", (e) => {
   // Pass classList to controller so we can find the recipe in recipes array
   const classList = e.target.classList[0];
   viewController(recipeContainer, "recipeView", classList);
+  naviContainer.style.display = "none";
+  menuBtn.style.display = "inline-block";
 });
 
 // Go to home page
@@ -43,9 +48,22 @@ query(".header-logo").addEventListener("click", onPageLoad);
 
 // Show mobile menu
 menuBtn.addEventListener("click", (e) => {
-  menuBtn.style.display = "none";
-  naviContainer.style.display = "inline-block";
+  showMobileMenu();
 });
 
 // Initial page load
 onPageLoad();
+
+const showMobileMenu = () => {
+  menuBtn.style.display = "none";
+  naviContainer.style.display = "inline-block";
+};
+
+closeMenu.addEventListener("click", (e) => {
+  closeMobileMenu();
+});
+
+const closeMobileMenu = () => {
+  naviContainer.style.display = "none";
+  menuBtn.style.display = "inline-block";
+};

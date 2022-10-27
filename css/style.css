@@ -50,9 +50,17 @@ body {
   font-size: 5rem;
   color: #a4330d;
 }
+.close-menu,
 .expand {
   display: none;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  background-color: #6c9e4f;
 }
+
 /* Main page content styling */
 .main-content {
   display: flex;
@@ -72,7 +80,8 @@ body {
   font-family: "custom1";
   background-color: #ed6e3a;
 }
-.navigation-container button {
+.add-new,
+.clear-recipes {
   border: none;
   margin-top: 20px;
   border-radius: 10px;
@@ -83,10 +92,12 @@ body {
   background-color: #6c9e4f;
   transition: transform 200ms ease-in-out;
 }
-.navigation-container button:hover {
+.add-new:hover,
+.clear-recipes:hover {
   cursor: pointer;
 }
-.navigation-container button:active {
+.add-new:active,
+.clear-recipes:active {
   transform: scale(1.1);
 }
 ul {

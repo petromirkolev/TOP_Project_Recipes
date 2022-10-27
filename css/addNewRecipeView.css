@@ -4,39 +4,32 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  animation: fadein 1000ms ease-in;
+  animation: fadein 200ms ease-in;
 }
-
 @keyframes fadein {
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
 }
-
 .add-recipe label,
 .add-recipe input {
   font-size: 1.5rem;
 }
-
 .add-recipe input {
   width: 50vw;
   border-radius: 5px;
   padding-left: 5px;
   text-overflow: ellipsis;
 }
-
 .add-recipe input:focus {
   background-color: rgba(143, 188, 143, 0.5);
 }
-
 #steps-to-prepare {
   padding: 10px 0 0 10px;
 }
-
 #submit {
   color: white;
   background-color: #6c9e4f;
@@ -48,26 +41,27 @@
   min-height: 50px;
   transition: transform 200ms ease-in-out;
 }
-
 #submit:hover {
   cursor: pointer;
 }
-
 #submit:active {
   transform: scale(1.1);
 }
-
 /* Smartphone styling */
 @media screen and (max-width: 500px) {
+  .close-menu,
   .expand {
     display: inline-block;
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    background-color: #6c9e4f;
   }
-
-  .close-menu {
-    display: inline-block;
-    font-size: 10px;
-  }
-
   /* Navigation styling */
   .navigation-container {
     display: none;
@@ -77,10 +71,8 @@
     font-family: "custom1";
     background-color: #ed6e3a;
   }
-
   .add-new,
-  .clear-recipes,
-  .expand {
+  .clear-recipes {
     border: none;
     margin-top: 20px;
     border-radius: 10px;
@@ -91,44 +83,34 @@
     background-color: #6c9e4f;
     transition: transform 200ms ease-in-out;
   }
-
   .add-new:hover,
-  .clear-recipes:hover,
-  .expand:hover {
+  .clear-recipes:hover {
     cursor: pointer;
   }
-
   .add-new:active,
-  .clear-recipes:active,
-  .expand:active {
+  .clear-recipes:active {
     transform: scale(1.1);
   }
-
   ul {
     list-style: none;
   }
-
   ul li {
     animation: fadein 100ms ease-in;
   }
-
   ul li a {
     font-size: 1.5rem;
     color: #a4330d;
     transition: color 200ms ease-in-out;
   }
-
   ul li a:hover {
     font-size: 1.5rem;
     color: #ffffff;
   }
-
   .recipe-container {
     display: inline-block;
     text-align: center;
-    padding: 0;
+    padding: 50px 0 0 0;
   }
-
   .recipe-container input {
     width: 85vw;
   }
