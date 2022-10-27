@@ -6,7 +6,9 @@ A simple HTML page to display a few food recipes - initial project of TheOdinPro
 
 # 🚀Features
 
-- N/A
+- Add recipe
+- View recipe
+- Delete all recipes
 
 # 🔨 To-Do
 
@@ -15,6 +17,8 @@ N/A
 ### ✔ Done
 
 - [x] Simple looking recipes page
+- [x] Mobile responsiveness
+- [x] Add functionality and styling to initial HTML only project
 
 # 📖 Debugging notes
 
