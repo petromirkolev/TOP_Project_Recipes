@@ -46,7 +46,7 @@ navigation.addEventListener("click", (e) => {
 // Go to home page
 query(".header-logo").addEventListener("click", onPageLoad);
 
-// Show mobile menu
+// Show mobile menu event listener
 menuBtn.addEventListener("click", (e) => {
   showMobileMenu();
 });
